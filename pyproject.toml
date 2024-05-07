@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "get-weather"
+version = "0.1.0"
+description = "Project for getting current weather from open-meteo"
+authors = ["Polina Maksimova <maksimovapi@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.3"
+python-dotenv = "^1.0.1"
+aiohttp = "^3.9.5"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.30"}
+alembic = "^1.13.1"
+asyncpg = "^0.29.0"
+psycopg2 = "^2.9.9"
+aioconsole = "^0.7.1"
+pandas = "^2.2.2"
+openpyxl = "^3.1.2"
+pre-commit = "^3.7.0"
+
+[tool.black]
+line-length = 79
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | migration
+)/
+'''
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
